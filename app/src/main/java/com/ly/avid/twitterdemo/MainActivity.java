@@ -1,5 +1,7 @@
 package com.ly.avid.twitterdemo;
 
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,8 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
 import io.fabric.sdk.android.Fabric;
+
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -30,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     URL url0 = new URL("https://www.google.com/");
-                    new TweetComposer.Builder(MainActivity.this).text("测试发送").url(url0).show();
+                    Uri imageUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "test.jpg"));
+                    new TweetComposer.Builder(MainActivity.this).text("测试发送").url(url0).image(imageUri).show();
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

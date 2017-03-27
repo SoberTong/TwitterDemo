@@ -11,6 +11,12 @@
     tools:context="com.ly.avid.twitterdemo.MainActivity"
     android:gravity="center">
 
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/twitter_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
     <Button
         android:id="@+id/btn_share"
         android:layout_width="wrap_content"
